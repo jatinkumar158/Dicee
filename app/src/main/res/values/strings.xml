@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">Dicee</string>
-    <string name="roll">roll</string>
+    <string name="roll_text">roll</string>
 </resources>

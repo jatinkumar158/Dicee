@@ -1,65 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.constraint.ConstraintLayout
 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#070908"
-    xmlns:android="http://schemas.android.com/apk/res/android"  >
+    android:background="#070908">
 
 
-
-    <ImageView
-            android:layout_width="300dp"
-            android:layout_height="200dp"
-            android:src="@drawable/dice_image"
-            android:id="@+id/dice_logo"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center"
-            />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginTop="50dp"
-
-        >
-
-        <ImageView
-            android:id="@+id/dicethree"
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:src="@drawable/dice3"
-
-            />
-
-        <ImageView
-            android:id="@+id/dicefive"
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:layout_marginLeft="50dp"
-            android:src="@drawable/dice5"
-            />
-
-    </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
     <Button
         android:id="@+id/roll"
-        android:layout_width="150dp"
-        android:layout_height="75dp"
-        android:textSize="30sp"
-        android:background="#2410f5"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/roll"
-        android:textColor="#ffffff" />
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:text="@string/roll_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
-    </RelativeLayout>
+    <ImageView
+        android:id="@+id/dicefive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/dice5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/dicethree"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/dicethree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/dice3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dicefive"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/dicee_logo"
+        app:layout_constraintBottom_toTopOf="@+id/dicefive"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.91" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.09" />
+
+
+</android.support.constraint.ConstraintLayout>
